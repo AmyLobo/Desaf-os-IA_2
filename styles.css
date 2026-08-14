@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cormorant+Garamond:wght@400;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Cormorant Garamond', serif;
+    color: #4a3b34;
+    text-align: center;
+}
+
+h1, h2 {
+    font-family: 'Alex Brush', cursive;
+    font-weight: normal;
+    letter-spacing: 1px;
+}
+
+/* Layout con CSS Grid */
+body {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas:
+        "header header"
+        "aside  main"
+        "footer footer";
+    min-height: 100vh;
+    gap: 10px;
+    background-color: #faf3e8;
+}
+
+.header {
+    grid-area: header;
+    background-color: #e8a6b8; /* rosa polvo */
+    padding: 1.5rem;
+}
+
+.aside {
+    grid-area: aside;
+    background-color: #7fa8a3; /* azul verdoso */
+    padding: 1.5rem;
+}
+
+.main {
+    grid-area: main;
+    background-color: #f4e0a3; /* mostaza suave */
+    color: #4a3b34;
+    padding: 1.5rem;
+}
+
+.footer {
+    grid-area: footer;
+    background-color: #c9a0dc; /* lila suave, complementa la paleta */
+    padding: 1.5rem;
+}
+
+/* Responsive: apila las secciones en pantallas pequeñas */
+@media (max-width: 600px) {
+    body {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "header"
+            "aside"
+            "main"
+            "footer";
+    }
+
+    h1, h2 {
+        font-size: 1.8rem;
+    }
+}
