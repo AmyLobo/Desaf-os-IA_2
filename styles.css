@@ -34,27 +34,67 @@ body {
 
 .header {
     grid-area: header;
-    background-color: #e8a6b8; /* rosa polvo */
+    background-color: #e8a6b8;
     padding: 1.5rem;
 }
 
 .aside {
     grid-area: aside;
-    background-color: #7fa8a3; /* azul verdoso */
+    background-color: #7fa8a3;
     padding: 1.5rem;
 }
 
 .main {
     grid-area: main;
-    background-color: #f4e0a3; /* mostaza suave */
+    background-color: #f4e0a3;
     color: #4a3b34;
     padding: 1.5rem;
 }
 
 .footer {
     grid-area: footer;
-    background-color: #c9a0dc; /* lila suave, complementa la paleta */
+    background-color: #c9a0dc;
     padding: 1.5rem;
+}
+
+/* Imagen con marco en el aside */
+.framed-image {
+    background-color: #faf3e8;
+    border: 6px solid #fff;
+    outline: 1px solid #c9a0dc;
+    padding: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    display: inline-block;
+    margin-top: 1rem;
+}
+
+.framed-image img {
+    display: block;
+    width: 100%;
+    max-width: 250px;
+    height: auto;
+}
+
+/* Collage con Flexbox en el main */
+.collage {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 1rem;
+}
+
+.collage img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border: 5px solid #fff;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s;
+}
+
+.collage img:hover {
+    transform: scale(1.05) rotate(-1deg);
 }
 
 /* Responsive: apila las secciones en pantallas pequeñas */
@@ -70,5 +110,10 @@ body {
 
     h1, h2 {
         font-size: 1.8rem;
+    }
+
+    .collage img {
+        width: 100px;
+        height: 100px;
     }
 }
